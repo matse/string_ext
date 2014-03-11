@@ -21,3 +21,18 @@ describe 'String#to_bool' do
     expect { "foo".to_bool }.to raise_error
   end
 end
+
+describe 'String#is_numeric?' do
+  it 'has a method #is_numeric?' do
+    expect { "foo".is_numeric? }.not_to raise_error
+  end
+  it 'returns true if a string is a number' do
+    expect('1'.is_numeric?).to eq true
+    expect('0.123'.is_numeric?).to eq true
+    expect('123E123'.is_numeric?).to eq true
+  end
+  it 'returns false if a string is not a number' do
+    expect('foo'.is_numeric?).to eq false
+    expect(''.is_numeric?).to eq false
+  end
+end

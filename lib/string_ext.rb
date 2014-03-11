@@ -8,4 +8,10 @@ module StringExt
       raise ArgumentError.new("invalid value for Boolean: \"#{self}\"")
     end
   end
+
+  String.class_eval do
+    def is_numeric?
+      Float(self) != nil rescue false
+    end
+  end
 end
