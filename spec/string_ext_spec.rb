@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'string_ext'
 
 describe 'String#to_bool' do
@@ -34,5 +36,16 @@ describe 'String#is_numeric?' do
   it 'returns false if a string is not a number' do
     expect('foo'.is_numeric?).to eq false
     expect(''.is_numeric?).to eq false
+  end
+end
+
+describe 'String#to_url' do
+  it 'returns a url if called to_url upon' do
+    expect('mühsam Große Türen'.to_url).to eql 'muehsam-grosse-tueren'
+  end
+
+  it 'cleans up any letters beside a-z' do
+    expect('#+++#<x, foo'.to_url).to eql 'x-foo'
+    expect('bahia_azul'.to_url).to eql 'bahia-azul'
   end
 end

@@ -19,6 +19,8 @@ Otherwise raising an ArgumentError.
     "true".to_bool # true
     "false".to_bool # false
 
+    "ü_Ö umlaut".to_url # "ue-oe-umlaut"
+
 ## Contributing
 
 1. Fork it
