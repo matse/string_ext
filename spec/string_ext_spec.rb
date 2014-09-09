@@ -48,4 +48,8 @@ describe 'String#to_url' do
     expect('#+++#<x, foo'.to_url).to eql 'x-foo'
     expect('bahia_azul'.to_url).to eql 'bahia-azul'
   end
+
+  it 'leaves numbers alone' do
+    expect('123-zimmer'.to_url).to eql '123-zimmer'
+  end
 end

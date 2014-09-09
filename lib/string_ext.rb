@@ -19,7 +19,7 @@ module StringExt
 
   String.class_eval do
     def to_url
-      self.downcase.gsub(/[Ää]/, 'ae').gsub(/[Üü]/, 'ue').gsub(/[Öö]/, 'oe').gsub(/ |_/, '-').gsub(/ß/, 'ss').gsub(/[«»]/,'').gsub(/[^a-z|^-]/,'')
+      self.downcase.gsub(/[Ää]/, 'ae').gsub(/[Üü]/, 'ue').gsub(/[Öö]/, 'oe').gsub(/ |_/, '-').gsub(/ß/, 'ss').gsub(/[«»]/,'').gsub(/[^a-z0-9|^-]/,'')
     end
   end
 end
